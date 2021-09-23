@@ -1,0 +1,35 @@
+body {
+    background-color: #14cda2;
+    text-align: center;
+}
+
+h1 {
+    margin: auto;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    margin: 10px auto;
+    width: max-content;
+    border-radius: 20px;
+    padding: 0 20px 10px;
+    border-left: 10px solid #9e0cdc;
+    border-right: 10px solid #9e0cdc;
+}
+
+#main .item {
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+button {
+    background-color: darkcyan;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 20px;
+    cursor: pointer;
+}

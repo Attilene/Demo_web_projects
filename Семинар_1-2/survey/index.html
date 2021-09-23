@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Жанры</title>
+</head>
+<body>
+    <h1>Жанры сериалов и фильмов</h1>
+    <div id="main">
+        <h3>Опросник для получения информации о наиболее популярных жанрах сериалов и фильмов</h3>
+        <div class="item">
+            <label for="name">Имя:</label>
+            <input id="name" type="text" size="50" placeholder="Введите имя">
+        </div>
+        <div class="item">
+            <label for="surname">Фамилия:</label>
+            <input id="surname" type="text" size="50" placeholder="Введите фамилию">
+        </div>
+        <div class="item">
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" placeholder="Введите email">
+        </div>
+        <div class="item">
+            <label for="sex">Пол:</label>
+            <span id="sex">
+                <input id="M" name="sex" type="radio">
+                <label for="M">Мужской</label>
+                <input id="W" name="sex" type="radio">
+                <label for="W">Женский</label>
+            </span>
+        </div>
+        <div class="item">
+            <label for="age">Возраст(лет):</label>
+            <input id="age" type="number" size="3" placeholder="Введите возраст">
+        </div>
+        <div class="item">
+            <label for="genre">Любимый жанр:</label>
+            <select id="genre">
+                <option>Триллер</option>
+                <option>Драма</option>
+                <option>Боевик</option>
+                <option>Ужасы</option>
+                <option>Комедия</option>
+                <option>Мелодрама</option>
+                <option>Вестерн</option>
+                <option>Пеплум</option>
+                <option>Нуар</option>
+                <option>Семейный</option>
+            </select>
+        </div>
+        <div class="item">
+            <label for="pegi">18+:</label>
+            <input id="pegi" type="checkbox">
+        </div>
+        <div class="item">
+            <label for="elements">Список любимых фильмов и сериалов:</label>
+            <textarea id="elements" rows="5" cols="50" placeholder="Введите названия"></textarea>
+        </div>
+        <button class="item" type="submit">Отправить</button>
+    </div>
+</body>
+</html>
