@@ -1,0 +1,28 @@
+body {
+    background-color: #e0f8ee;
+    text-align: center;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    margin: 10px auto;
+    width: max-content;
+    border-radius: 20px;
+    padding: 0 20px 10px;
+    border-left: 10px solid #86bfc5;
+    border-right: 10px solid #86bfc5;
+}
+
+#main .item {
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#main .radio {
+    margin: auto 20px;
+    height: min-content;
+}
