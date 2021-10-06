@@ -1,0 +1,55 @@
+body {
+    background-color: #9f9f9f;
+}
+
+.avatar {
+    margin-right: 30px;
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.big-size {
+    font-size: 24px;
+}
+
+.top-construct {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+}
+
+.top-construct.image {
+    margin-top: 35px;
+}
+
+.label-align {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+.card {
+    background-color: white;
+    margin: 15px;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    background: #6aef94;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    margin: auto 20px auto 25px;
+}
+
+.date {
+    alignment: right;
+}
+
+.container {
+    padding: 15px;
+    max-width: 1000px;
+}
