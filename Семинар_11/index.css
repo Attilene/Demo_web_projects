@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Calibri", serif;
+    font-size: 20px;
+}
+
+body table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+body table td {
+    text-align: center;
+    padding: 5px;
+}
+
+body table thead {
+    height: 40px;
+    border-bottom: 2px solid #547cff;
+    font-weight: bold;
+    background: #7fdde5;
+}
+
+body table thead td {
+    padding: 10px;
+}
+
+body table tbody tr {
+    border-left: none;
+    border-right: none;
+}
+
+body table tbody tr:nth-of-type(even) {
+    background: #c1fff8;
+}
+
+body form {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+body form label, body form h3 {
+    text-align: center;
+}
+
+body form select, body form button {
+    border: 2px solid #547cff;
+    background: #7fdde5;
+    outline: none;
+}
+
+body form label, body form select, body form button {
+    margin: 5px 0;
+}
