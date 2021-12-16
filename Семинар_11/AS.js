@@ -14,19 +14,15 @@ function sortTable(body, column) {
 async function AS() {
     const stationTBL = document.querySelector('#station-tbl');
     const columnSLT = document.querySelector('#column-slt');
-    const sortBTN = document.querySelector('#sort-btn');
     const stations = await (await fetch('AS.json')).json();
     const columns = ['ID', 'Название', 'Административный округ', 'Район', 'Адрес', 'Зона ответственности', 'Режим работы'];
     columns.forEach((c, i) => columnSLT.add(new Option(c, String(i))));
     appendRow(stationTBL.createTHead(), columns);
     const body = stationTBL.createTBody();
     stations.forEach(({ ID, Name, AdmArea, District, Address, ResponsibilityArea, WorkingHours }) => appendRow(body, [ID, Name, AdmArea, District, Address, ResponsibilityArea, WorkingHours]));
-    sortBTN.addEventListener('click', () => {
+    columnSLT.addEventListener('change', () => {
         const col = Number(columnSLT.value);
-        if (isNaN(col))
-            alert("Выберете колонку для сортировки");
-        else
-            sortTable(body, col);
+        sortTable(body, col);
     });
 }
 document.addEventListener('DOMContentLoaded', AS);

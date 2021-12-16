@@ -31,7 +31,6 @@ function sortTable(body: HTMLTableSectionElement, column: number) {
 async function AS() {
     const stationTBL = document.querySelector('#station-tbl') as HTMLTableElement
     const columnSLT = document.querySelector('#column-slt') as HTMLSelectElement
-    const sortBTN = document.querySelector('#sort-btn') as HTMLButtonElement
 
     const stations: RescueStation[] = await (await fetch('AS.json')).json()
     const columns: string[] = ['ID', 'Название', 'Административный округ', 'Район', 'Адрес', 'Зона ответственности', 'Режим работы']
@@ -43,13 +42,9 @@ async function AS() {
     stations.forEach(({ ID, Name, AdmArea, District, Address, ResponsibilityArea, WorkingHours }) =>
         appendRow(body, [ID, Name, AdmArea, District, Address, ResponsibilityArea, WorkingHours]))
 
-    sortBTN.addEventListener('click', () => {
+columnSLT.addEventListener('change', () => {
         const col = Number(columnSLT.value)
-
-        if (isNaN(col))
-            alert("Выберете колонку для сортировки")
-        else
-            sortTable(body, col)
+        sortTable(body, col)
     })
 }
 
