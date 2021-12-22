@@ -1,6 +1,7 @@
+// @ts-ignore
 function parsePlaces(places) {
     return places
-        .filter(({ geoData }) => geoData !== undefined)
+        .filter(({ geoData }) => geoData != undefined)
         .map(({ P1, P2, P5, P7, geoData: { coordinates } }) => ({
         city: P1,
         district: P2,
@@ -9,9 +10,11 @@ function parsePlaces(places) {
         coordinates: coordinates[0]
     }));
 }
+// @ts-ignore
 function fromRange(value, from, to, mult = 1000) {
     return (value - from) / (to - from) * mult;
 }
+// @ts-ignore
 function drawPlaces(cvs, places) {
     const ctx = cvs.getContext('2d');
     ctx.fillStyle = 'orange';

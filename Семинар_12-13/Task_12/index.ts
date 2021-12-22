@@ -1,3 +1,4 @@
+// @ts-ignore
 type Coord = Array<[number, number]>
 
 interface RawPlace {
@@ -18,6 +19,7 @@ interface Place {
     coordinates: Coord
 }
 
+// @ts-ignore
 function parsePlaces(places: RawPlace[]): Place[] {
     return places
         .filter(({ geoData }) => geoData != undefined)
@@ -30,10 +32,12 @@ function parsePlaces(places: RawPlace[]): Place[] {
         }))
 }
 
+// @ts-ignore
 function fromRange(value: number, from: number, to: number, mult = 1000): number {
     return (value - from) / (to - from) * mult
 }
 
+// @ts-ignore
 function drawPlaces(cvs: HTMLCanvasElement, places: Place[]) {
     const ctx = cvs.getContext('2d')
     ctx.fillStyle = 'orange'
