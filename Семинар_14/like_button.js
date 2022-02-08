@@ -9,15 +9,18 @@ class LikeButton extends React.Component {
     }
 
     render() {
-        if (this.state.liked) {
-            return 'You liked comment number ' + this.props.commentID;
-        }
-
-        return e(
-            'button',
-            { onClick: () => this.setState({liked: true}) },
-            'Like'
-        );
+        if (this.state.liked)
+            return e(
+                'button',
+                { onClick: () => this.setState({liked: false}) },
+                'Like'
+            );
+        else
+            return e(
+                'button',
+                { onClick: () => this.setState({liked: true}) },
+                this.props.commentID
+            );
     }
 }
 
