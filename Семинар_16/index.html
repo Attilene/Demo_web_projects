@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JSX</title>
+</head>
+<body>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <div id="calc"></div>
+    <div id="app"></div>
+
+    <script type="text/babel">
+        ReactDOM.render(
+            <h2>5 + 2 = {5 + 2}</h2>,
+            document.getElementById("calc")
+        )
+    </script>
+
+    <script type="text/babel">
+        class User {
+            constructor() {
+                this.color = 'black';
+                this.fontFamily = "Arial";
+                this.fontSize = 11;
+                this.user = {
+                    age: null,
+                    firstName: null,
+                    lastName: null,
+                    getFullName: function () {
+                        return `${this.firstName} ${this.lastName}`;
+                    }
+                };
+            }
+
+            setStyleObj(color, font, font_size) {
+                this.color = color;
+                this.fontFamily = font;
+                this.fontSize = font_size;
+            }
+
+            setUser(age, first_name, last_name) {
+                this.user.age = age;
+                this.user.firstName = first_name;
+                this.user.lastName = last_name;
+            }
+
+            getStyleObj() {
+                return {
+                    color: this.color,
+                    fontFamily: this.fontFamily,
+                    fontSize: this.fontSize
+                };
+            }
+
+            getUser() {
+                return {
+                    age: this.user.age,
+                    firstName: this.user.firstName,
+                    lastName: this.user.lastName
+                };
+            }
+        }
+
+        const userClassName = "user-info";
+        let person = new User();
+        person.setStyleObj('blue', 'TimesNewRoman', 24);
+        person.setUser(20, 'Артем', 'Баканов');
+
+        ReactDOM.render(
+            <div className={userClassName}  style={person.getStyleObj()}>
+                <p>Полное имя: {person.user.getFullName()}</p>
+                <p>Возраст: {person.user.age}</p>
+            </div>,
+            document.getElementById("app")
+        )
+    </script>
+</body>
+</html>
