@@ -10,13 +10,12 @@
 <body>
     <div id="app1"></div>
     <div id="app2"></div>
-    <div id="app3"></div>
 
     <script type="text/babel">
         class Clock extends React.Component {
             constructor(props) {
                 super(props);
-                this.state = {date: new Date(), name: "Артем"};
+                this.state = {date: new Date(), name: this.props.name};
                 this.unmount = this.unmount.bind(this);
             }
             unmount(){
@@ -52,42 +51,8 @@
         }
 
         ReactDOM.render(
-            <Clock />,
+            <Clock name={"Артем"}/>,
             document.getElementById("app1")
-        )
-    </script>
-
-    <script type="text/babel">
-        class ClickButton extends React.Component {
-            constructor(props) {
-                super(props);
-                this.state = {class: "off", label: "Нажми"};
-
-                this.press = this.press.bind(this);
-
-                console.log("constructor");
-            }
-
-            componentWillReceiveProps(nextProps) {
-                console.log("componentWillReceiveProps()");
-            }
-
-            press(){
-                let className = (this.state.class === "off") ? "on" : "off";
-                this.setState({class: className});
-            }
-
-            render() {
-                return <div>
-                    <button onClick={this.press} className={this.state.class}>{this.state.label}</button>
-                    <label> {this.state.class} </label>
-                </div>;
-            }
-        }
-
-        ReactDOM.render(
-            <ClickButton />,
-            document.getElementById("app2")
         )
     </script>
 
@@ -159,7 +124,7 @@
 
         ReactDOM.render(
             <ItemsList data={propsValues} />,
-            document.getElementById("app3")
+            document.getElementById("app2")
         )
     </script>
 </body>
