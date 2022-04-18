@@ -6,6 +6,7 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div id="app"></div>
@@ -59,16 +60,16 @@
                 return (
                     <form onSubmit={this.handleSubmit}>
                         <p>
-                            <label>Имя:</label><br />
+                            <label>ИМЯ:</label><br />
                             <input type="text" value={this.state.name}
                                    onChange={this.onNameChange} style={{borderColor:nameColor}} />
                         </p>
                         <p>
-                            <label>Возраст:</label><br />
+                            <label>ВОЗРАСТ:</label><br />
                             <input type="number" value={this.state.age}
                                    onChange={this.onAgeChange}  style={{borderColor:ageColor}} />
                         </p>
-                        <input type="submit" value="Отправить" />
+                        <input className="but" type="submit" value="Отправить" />
                     </form>
                 );
             }
